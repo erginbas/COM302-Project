@@ -27,6 +27,6 @@ def str2bin(string):
 
 def bin2str(binary):
     try:
-        return binascii.unhexlify('%x' % int(binary[(len(binary) % 8):], 2)).decode('ascii')
+        return binascii.unhexlify('%x' % int(binary[(len(binary) % 8):], 2)).decode('ascii', "replace")
     except UnicodeDecodeError:
         return "*"

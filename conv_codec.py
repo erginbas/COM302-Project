@@ -84,34 +84,3 @@ class ConvCodec():
             state = full_state % (2**(self.c_length-1))
 
         return x
-
-# M = np.array([[1,0,0,1],[1,0,1,1],[1,1,0,1],[1,1,1,1]])
-# codec = ConvCodec(M)
-#
-#
-# msg = np.random.choice([-1, 1], 64)
-#
-# count = 0
-# coded_len = len(codec.encode(msg))
-# for i in range(1000):
-#     decoded_msg = codec.decode(4*np.random.randn(coded_len) + 4*codec.encode(msg))
-#     count += np.sum(decoded_msg != msg)
-#
-# print("bit error probability:", count/(1000*len(msg)))
-#
-# count = 0
-# coded_len = len(msg)
-# for i in range(1000):
-#     decoded_msg = np.sign(8*msg + 4*np.random.randn(coded_len))
-#     count += np.sum(decoded_msg != msg)
-#
-# print("bit error probability:", count/(1000*len(msg)))
-
-
-# import timeit
-# timeit.timeit(lambda: codec.decode(codec.encode(msg)))
-
-# M= np.array([[1,0,1],[1,1,1]])
-# codec = ConvCodec(M)
-#
-# print(codec.decode(codec.encode(np.array([1,-1,-1,1,1]))))
